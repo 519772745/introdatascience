@@ -1,0 +1,47 @@
+NAME:SUNYIXUAN 
+REGISTRATION NO:NEX180656
+
+1.Write a Function without an argument.
+
+	getRandom <- function() {
+	  return(runif(1, 0, 10))
+	}
+
+	getRandom()
+	
+2.Write a Function with default argument.
+
+	printWords <- function(words="Hello World") {
+	  print(words)
+	}
+
+	printWords()
+
+3.Write a Function with argument values. 
+
+	add <- function(x,y){
+	  return(x+y)
+	}
+	add(3,5)
+
+4.Write a Function myCGPA that calculate students’ CGPA.
+
+	myCGPA <- function(letters) {
+	  sum=0
+	  length=0
+	  letters=toupper(letters)
+	  for (letter in letters) {
+		switch (letter,'A+' = {sum=sum+4},'A' = {sum=sum+4},'A-' = {sum=sum+3.7},
+				'B+' = {sum=sum+3.3},'B' = {sum=sum+3},'B-' = {sum=sum+2.7},'C+' = {sum=sum+2.3},
+				'C' = {sum=sum+2},'C-' = {sum=sum+1.7},'D+' = {sum=sum+1.3},'D' = {sum=sum+1},
+				'F'={sum=sum+0},{cat(sprintf('Not exists the letter :%s,ignored\n',letter));length=length-1})
+		length=length+1
+	  }
+	  if(length==0){
+		return(0)
+	  }else{
+		return(sum/length)
+	  }
+	}
+
+	print(myCGPA(scan(what = character())))
